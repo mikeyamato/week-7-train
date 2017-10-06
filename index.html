@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us"> 
+<head>
+	<title>Train Schedule</title>
+	
+	<!-- mobile 1st -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+
+	<!-- reset -->
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+
+	<!-- link CSS file -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+	<!-- LINK TO FIREBASE GOES HERE -->
+    <script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+
+    <!-- Added Moment JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  	<!-- try this as an alternative -> https://cdn.jsdelivr.net/npm/moment@2.18.1/moment.min.js -->
+
+</head>
+<body>
+
+	<!-- jumbotron -->
+	<section>
+		<div class="container"> 
+			<div class="jumbotron text-center">
+				<div class="title">
+					<h1>
+						Anytime is Train Time
+					</h1>
+					<h3>
+						C'mon 'N Ride It 
+					</h3>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- schedule -->
+	<section>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<div class="panel-title glyphicon glyphicon-th-list" aria-hidden="true">
+				</div>
+				Current Train Schedule
+			</div>
+			<div class="panel-body">
+				<table class="table table-hover" id="schedule-table">
+					<thead>
+						<tr>
+							<th>Train Name</th>
+							<th>Destination</th>
+							<th>Frequency (min)</th>
+							<th>Next Arrival</th>
+							<th>Minutes Away</th>
+						</tr>
+					</thead>
+					<tbody>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+
+	<!-- search parameters -->
+	<section>
+		<form>
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-time" aria-hidden="true"></span>
+				Add Train
+			</div>
+			<div class="panel-body">
+
+				<!-- 1st field -->
+				<div class="form-group">
+					<label for="trainName">Train Name</label>
+					<input type="text" class="form-control" placeholder="example: Polar Express" id="trainName">
+				</div>
+
+				<!-- 2nd field -->
+				<div class="form-group">  <!-- I need to update this -->
+					<label for="destination">Destination</label>
+					<input type="text" class="form-control" placeholder="example: La La Land" id="dest">
+				</div>
+
+				<!-- 3rd field -->
+				<div class="form-group">  <!-- look at 4:28 -->
+					<label for="firstTrain">First Train Time (HH:mm - military time)</label>
+					<input type="text" class="form-control" placeholder="example: 21:25" id="firstTrain">
+				</div>
+
+				<!-- 4th field -->
+				<div class="form-group">
+					<label for="frequency">Frequency (minutes)</label>
+					<input type="text" class="form-control" placeholder="example: 25" id="frequency">
+				</div>
+
+				<!-- buttons -->
+				<button class="btn btn-default" type="submit">
+					<span class="glyphicon glyphicon-plus" aria-hidden="true" id="searchBtn"></span>
+					Add
+				</button>
+				<button class="btn btn-default" type="reset" id="resetBtn">
+					<span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+					Clear Results
+				</button>
+				<br>
+			</div>
+		</div>
+		</form>
+	</section>
+
+	<!-- jQuery (place at bottom, above /body) -->
+	<script
+	src="https://code.jquery.com/jquery-3.2.1.min.js"
+	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	crossorigin="anonymous"></script>
+
+	<!-- Latest compiled and minified JavaScript (place at bottom above /body) -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<!-- link Js file (place at bottom above /body) -->
+	<script src="assets/javascript/main.js" type="text/javascript"></script>
+
+</body>
+</html>
+
+
+
+
+
